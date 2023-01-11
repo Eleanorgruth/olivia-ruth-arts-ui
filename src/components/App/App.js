@@ -9,19 +9,19 @@ const App = () => {
   return (
     <Routes>
       <Route
-        path="/"
+        exact path="/"
         element={
           <Home />
         }
       />
       <Route
-        path="/test"
+        exact path="/test"
         element={
           <ArtContainer />
         }
       />
       <Route
-        path="/about-the-site"
+        exact path="/about-the-site"
         element={
           <AboutSite />
         }
