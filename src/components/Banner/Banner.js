@@ -8,12 +8,12 @@ const Banner = () => {
     <div>
       <NavLink to={'/'}><h1>Olivia Ruth Arts</h1></NavLink>
       <nav>
-        <NavLink to={'/glass'}>Glass</NavLink>
-        <NavLink to={'/paintings-drawings'}>Paintings and Drawings</NavLink>
-        <NavLink to={'/print'}>Print Making</NavLink>
-        <NavLink to={'/fiber'}>Fiber Art</NavLink>
-        <NavLink to={'/developmental'}>Developmental Art</NavLink>
-        <NavLink to={'/about-the-site'}>About the Site</NavLink>
+        <NavLink className ="menuItem" to={'/glass'}>Glass</NavLink>
+        <NavLink className ="menuItem" to={'/paintings-drawings'}>Paintings and Drawings</NavLink>
+        <NavLink className ="menuItem" to={'/print'}>Print Making</NavLink>
+        <NavLink className ="menuItem" to={'/fiber'}>Fiber Art</NavLink>
+        <NavLink className ="menuItem" to={'/developmental'}>Developmental Art</NavLink>
+        <NavLink className ="menuItem" to={'/about-the-site'}>About the Site</NavLink>
       </nav>
     </div>
   )

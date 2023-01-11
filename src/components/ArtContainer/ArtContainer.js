@@ -14,9 +14,8 @@ const ArtContainer = ({ art }) => {
     }, [type])
     
     const artDisplay = filteredArt.map(artPiece => {
-      //key=artPiece.id
       return (
-      <section>
+        <section key={artPiece.id}>
         <h3>{artPiece.title}</h3>
         <img src={`https://drive.google.com/uc?export=view&id=${artPiece.url}`} alt={artPiece.title}/>
         <p>{artPiece.description}</p>
