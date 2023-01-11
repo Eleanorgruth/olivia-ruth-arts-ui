@@ -1,15 +1,19 @@
 import React from "react"
-import { Link } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import './Banner.css'
 
 const Banner = () => {
 
   return (
     <div>
-      <h1>Olivia Ruth Arts</h1>
+      <NavLink to={'/'}><h1>Olivia Ruth Arts</h1></NavLink>
       <nav>
-        <Link to={'/test'}>Test</Link>
-        <Link to={'/about-the-site'}>About the Site</Link>
+        <NavLink to={'/glass'}>Glass</NavLink>
+        <NavLink to={'/paintings-drawings'}>Paintings and Drawings</NavLink>
+        <NavLink to={'/print'}>Print Making</NavLink>
+        <NavLink to={'/fiber'}>Fiber Art</NavLink>
+        <NavLink to={'/developmental'}>Developmental Art</NavLink>
+        <NavLink to={'/about-the-site'}>About the Site</NavLink>
       </nav>
     </div>
   )

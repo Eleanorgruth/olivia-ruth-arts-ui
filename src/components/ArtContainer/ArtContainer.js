@@ -1,9 +1,34 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
 import './ArtContainer.css'
 
-const ArtContainer = () => {
+const ArtContainer = ({ art }) => {
+  const { type } = useParams()
+  const [filteredArt, setFilteredArt] = useState([])
+
+  useEffect(()=> {
+    const filterArt = art.filter((artPiece)=> {
+      return artPiece.type === type
+    })
+    setFilteredArt(filterArt)
+    }, [type])
+    
+    const artDisplay = filteredArt.map(artPiece => {
+      //key=artPiece.id
+      return (
+      <section>
+        <h3>{artPiece.title}</h3>
+        <img src={`https://drive.google.com/uc?export=view&id=${artPiece.url}`} alt={artPiece.title}/>
+        <p>{artPiece.description}</p>
+      </section>
+    )
+  })
+ 
   return (
-    <h1>Test art container</h1>
+    <div>
+      <h1>{type}</h1>
+      {artDisplay}
+    </div>
   )
 }
 
