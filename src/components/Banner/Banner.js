@@ -47,28 +47,28 @@ const Banner = () => {
         <NavLink
           className={selectedItem === 'print' ? 'selected menuItem' : 'menuItem'}
           onClick={() => {
-            // toggleHamburger()
+            //toggleHamburger()
             setSelectedItem('print')
           }}
           to={'/print'}>Print Making</NavLink>
         <NavLink
           className={selectedItem === 'fiber' ? 'selected menuItem' : 'menuItem'}
           onClick={() => {
-            // toggleHamburger()
+            toggleHamburger()
             setSelectedItem('fiber')
           }}
           to={'/fiber'}>Fiber Art</NavLink>
         <NavLink
           className={selectedItem === 'developmental' ? 'selected menuItem' : 'menuItem'}
           onClick={() => {
-            // toggleHamburger()
+            toggleHamburger()
             setSelectedItem('developmental')
           }}
           to={'/developmental'}>Developmental Art</NavLink>
         <NavLink
           className={selectedItem === 'about-the-site' ? 'selected menuItem' : 'menuItem'}
           onClick={() => {
-            // toggleHamburger()
+            toggleHamburger()
             setSelectedItem('about-the-site')
           }}
           to={'/about-the-site'}>About the Site</NavLink>
