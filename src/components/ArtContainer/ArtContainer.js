@@ -3,18 +3,23 @@ import { useParams } from "react-router-dom";
 import './ArtContainer.css'
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
+import getData from "../../apiCalls";
 
-const ArtContainer = ({ art }) => {
+const ArtContainer = () => {
   const { type } = useParams()
+
+  // const [art, setArt] = useState([])
   const [filteredArt, setFilteredArt] = useState([])
 
-  useEffect(() => {
-    const filterArt = art.filter((artPiece) => {
-      return artPiece.type === type
+  useEffect(()=> {
+    getData('http://localhost:3001/art').then(data => {
+     const filterArt = data.filter((artPiece) => {
+        return artPiece.type === type
+      })
+      setFilteredArt(filterArt)
     })
-    setFilteredArt(filterArt)
-  }, [type])
-
+    }, [type])
+    
   const artDisplay = filteredArt.map(artPiece => {
     return (
       <section key={artPiece.id}>

@@ -1,22 +1,12 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from '../Home/Home'
 import ArtContainer from '../ArtContainer/ArtContainer';
 import AboutSite from '../AboutSite/AboutSite';
 import Banner from '../Banner/Banner';
-import Art from '../Art/Art'
-import getData from "../../apiCalls";
-
 
 const App = () => {
-const [art, setArt] = useState([])
-
-  useEffect(()=> {
-    getData('http://localhost:3001/art').then(data => {
-      setArt(data)})
-    }, [])
-
   return (
     <main className='app'>
       <Banner />
@@ -30,8 +20,9 @@ const [art, setArt] = useState([])
         <Route
           exact path="/:type"
           element={
-            <ArtContainer art={art}/>
+            <ArtContainer />
           }
+          //Renders ArtContainer
         />
         <Route
           exact path="/about-the-site"
