@@ -1,11 +1,13 @@
-import React, {useEffect, useParams, useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import { Route, Routes } from 'react-router-dom';
 import './App.css';
 import Home from '../Home/Home'
 import ArtContainer from '../ArtContainer/ArtContainer';
 import AboutSite from '../AboutSite/AboutSite';
 import Banner from '../Banner/Banner';
+import Art from '../Art/Art'
 import getData from "../../apiCalls";
+
 
 const App = () => {
 const [art, setArt] = useState([])
@@ -16,7 +18,7 @@ const [art, setArt] = useState([])
     }, [])
 
   return (
-    <main>
+    <main className='app'>
       <Banner />
       <Routes>
         <Route
@@ -29,6 +31,12 @@ const [art, setArt] = useState([])
           exact path="/:type"
           element={
             <ArtContainer art={art}/>
+          }
+        />
+         <Route
+          exact path="/:type/artwork/:id"
+          element={
+            <Art art={art}/>
           }
         />
         <Route

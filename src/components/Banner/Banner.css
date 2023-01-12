@@ -1,0 +1,14 @@
+nav {
+  width: 80vw;
+  display: flex;
+  justify-content: space-evenly;
+}
+.menuItem {
+  text-decoration: none;
+  font-size: 2vh;
+  color: rgba(0, 0, 0, 0.496);
+  font-weight: 550;
+}
+.menuItem:hover {
+  color: rgb(250, 11, 11);
+}

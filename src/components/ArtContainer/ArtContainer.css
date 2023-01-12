@@ -1,4 +1,14 @@
+section {
+  display: flex;
+  margin: 10vh;
+}
+.artInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
 img {
- height: 10vh;
+ height: 45vh;
  width: auto;
+ margin-right: 5vw;
 }
