@@ -24,7 +24,9 @@ const ArtContainer = () => {
     return (
       <section key={artPiece.id}>
         <Zoom>
-          <img src={`https://drive.google.com/uc?export=view&id=${artPiece.url}`} alt={artPiece.title} />
+          <img
+            src={`https://drive.google.com/uc?export=view&id=${artPiece.url}`}
+            alt={artPiece.title} />
         </Zoom>
         <div className="artInfo">
           <h3>{artPiece.title}</h3>
