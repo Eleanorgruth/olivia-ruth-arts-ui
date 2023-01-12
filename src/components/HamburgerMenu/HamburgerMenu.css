@@ -1,0 +1,24 @@
+.hamburger {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .hamburger {
+    width: 2em;
+    height: 2em;
+    display: flex;
+    justify-content: space-around;
+    flex-flow: colum;
+    flex-wrap: wrap;
+    z-index: 10;
+  }
+}
+
+.burger {
+  width: 5vw;
+  height: 1vh;
+  border-radius: 10%;
+  background-color: black;
+  transform-origin: 1px;
+  transition: all 0.3s linear;
+}
