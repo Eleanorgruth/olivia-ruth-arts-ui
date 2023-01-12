@@ -7,8 +7,8 @@ nav {
   text-decoration: none;
   font-size: 2vh;
   color: rgba(0, 0, 0, 0.496);
-  font-weight: 550;
+  font-weight: 650;
 }
-.menuItem:hover {
-  color: rgb(250, 11, 11);
+.menuItem:hover, .selected {
+  color: #861657;
 }

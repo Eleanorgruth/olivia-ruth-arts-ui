@@ -1,5 +1,12 @@
+* {
+/* background-color: #f5ebe0; */
+}
 .app {
- margin-left: 10vw;
- margin-right: 10vw;
- height: 100 vh;
+  margin-left: 10vw;
+  margin-right: 10vw;
+  margin-top: 0;
+  height: 100%;
+  font-family: 'Cardo', cursive;
+  /* background-color: #f5ebe0; */
+
 }

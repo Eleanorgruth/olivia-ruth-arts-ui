@@ -23,8 +23,8 @@ const ArtContainer = ({ art }) => {
         </Zoom>
         <div className="artInfo">
           <h3>{artPiece.title}</h3>
-          <p>Medium: {artPiece.medium}</p>
           <p>{artPiece.date}</p>
+          <p>{artPiece.medium}</p>
           <p>Dimensions: {artPiece.dimension}</p>
           <p>{artPiece.description}</p>
         </div>
