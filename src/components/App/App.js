@@ -33,12 +33,6 @@ const [art, setArt] = useState([])
             <ArtContainer art={art}/>
           }
         />
-         <Route
-          exact path="/:type/artwork/:id"
-          element={
-            <Art art={art}/>
-          }
-        />
         <Route
           exact path="/about-the-site"
           element={

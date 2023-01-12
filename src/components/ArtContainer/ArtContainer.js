@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import './ArtContainer.css'
-import { Link } from "react-router-dom"
 import Zoom from 'react-medium-image-zoom'
 import 'react-medium-image-zoom/dist/styles.css'
 
@@ -19,11 +18,9 @@ const ArtContainer = ({ art }) => {
   const artDisplay = filteredArt.map(artPiece => {
     return (
       <section key={artPiece.id}>
-        {/* <Link to={`artwork/${artPiece.id}`}> */}
         <Zoom>
           <img src={`https://drive.google.com/uc?export=view&id=${artPiece.url}`} alt={artPiece.title} />
         </Zoom>
-        {/* </Link> */}
         <div className="artInfo">
           <h3>{artPiece.title}</h3>
           <p>Medium: {artPiece.medium}</p>
