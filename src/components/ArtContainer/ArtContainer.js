@@ -7,12 +7,10 @@ import getData from "../../apiCalls";
 
 const ArtContainer = () => {
   const { type } = useParams()
-
-  // const [art, setArt] = useState([])
   const [filteredArt, setFilteredArt] = useState([])
 
   useEffect(()=> {
-    getData('http://localhost:3001/art').then(data => {
+    getData('https://olivia-ruth-arts-api.vercel.app/art').then(data => {
      const filterArt = data.filter((artPiece) => {
         return artPiece.type === type
       })

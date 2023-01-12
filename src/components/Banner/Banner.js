@@ -9,20 +9,33 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 const Banner = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [hamburgerOpen, setHamburgerOpen] = useState(false)
-  const { type } = useParams()
 
   const toggleHamburger = () => {
     setHamburgerOpen(!hamburgerOpen)
   }
   return (
     <div className="navMenu">
+      {/* <div className="contactOlivia"> */}
+        <a
+          className="contactOlivia"
+          href="https://www.instagram.com/ojrutharts/">
+          <FontAwesomeIcon className="contactOlivia" icon={faInstagram} />
+        </a>
+        <a 
+          className="contactOlivia"
+          href="mailto: olivia.ruth@me.com">
+
+          <FontAwesomeIcon className="contactOlivia" icon={faEnvelope} />
+        </a>
+      {/* </div> */}
       <NavLink to={'/'}><h1>Olivia Ruth Arts</h1></NavLink>
-      <nav className={hamburgerOpen ? 'hide': 'navStyling'} >
+      <nav className={hamburgerOpen ? 'hide' : 'navStyling'} >
         <NavLink
           className={selectedItem === 'glass' ? 'selected menuItem' : 'menuItem'}
           onClick={() => {
             // toggleHamburger()
-            setSelectedItem('glass')}}
+            setSelectedItem('glass')
+          }}
           to={'/glass'}>Glass</NavLink>
         <NavLink
           className={selectedItem === 'paintings-drawings' ? 'selected menuItem' : 'menuItem'}
@@ -60,11 +73,11 @@ const Banner = () => {
           }}
           to={'/about-the-site'}>About the Site</NavLink>
       </nav>
-        <FontAwesomeIcon
-          className="hamburger"
-          icon={faBars}
-          // isOpen={hamburgerOpen}
-          onClick={toggleHamburger}/>
+      <FontAwesomeIcon
+        className="hamburger"
+        icon={faBars}
+        // isOpen={hamburgerOpen}
+        onClick={toggleHamburger} />
     </div>
   )
 }
