@@ -1,0 +1,19 @@
+section {
+  display: flex;
+  margin: 10vh;
+}
+.artInfo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+img {
+ height: 45vh;
+ width: auto;
+ margin-right: 5vw;
+ /* border: 2px solid black */
+}
+p {
+  margin-top: 1vh;
+  margin-bottom: 1vh;
+}
