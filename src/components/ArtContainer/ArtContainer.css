@@ -1,6 +1,7 @@
 section {
   display: flex;
-  margin: 10vh;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
 }
 .artInfo {
   display: flex;
@@ -11,9 +12,21 @@ section {
  height: 45vh;
  width: auto;
  margin-right: 5vw;
- /* border: 2px solid black */
 }
 p {
   margin-top: 1vh;
   margin-bottom: 1vh;
+}
+
+@media (max-width: 767px){
+  section {
+    display: flex;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    flex-direction: column;
+    align-items: center;
+  }
+  .artInfo {
+    align-items: center;
+  }
 }
