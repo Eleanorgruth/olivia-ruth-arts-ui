@@ -9,7 +9,7 @@ import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 const Banner = () => {
   const [selectedItem, setSelectedItem] = useState(null);
-  const [hamburgerOpen, setHamburgerOpen] = useState(false)
+  const [hamburgerOpen, setHamburgerOpen] = useState(true)
 
   const selectMenuItem = (selection) => {
     setSelectedItem(selection)

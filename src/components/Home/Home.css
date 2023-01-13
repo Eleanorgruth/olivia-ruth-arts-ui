@@ -4,7 +4,6 @@
 }
 .oliviaPhoto {
   height: 45vh;
-  width: auto;
   margin-right: 3vw;
   object-fit: cover;
   /* overflow-clip-margin: content-box;
