@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import { NavLink, useParams } from "react-router-dom"
 import './Banner.css'
+import logo from "../assets/ojLogo2.jpeg"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faEnvelope } from '@fortawesome/free-solid-svg-icons'
@@ -10,7 +11,10 @@ const Banner = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [hamburgerOpen, setHamburgerOpen] = useState(false)
 
+  console.log(window
+    )
   const toggleHamburger = () => {
+    if(window.width < 767)
     setHamburgerOpen(!hamburgerOpen)
   }
   return (
@@ -27,41 +31,41 @@ const Banner = () => {
 
           <FontAwesomeIcon className="contactOlivia" icon={faEnvelope} />
         </a>
-      {/* </div> */}
-      <NavLink to={'/'}><h1>Olivia Ruth Arts</h1></NavLink>
+      <NavLink
+        to={'/'}
+        onClick={() => {
+          setSelectedItem(null)
+        }}>
+          <img src={logo}/>
+        </NavLink>
       <nav className={hamburgerOpen ? 'hide' : 'navStyling'} >
         <NavLink
           className={selectedItem === 'glass' ? 'selected menuItem' : 'menuItem'}
           onClick={() => {
-            // toggleHamburger()
             setSelectedItem('glass')
           }}
           to={'/glass'}>Glass</NavLink>
         <NavLink
           className={selectedItem === 'paintings-drawings' ? 'selected menuItem' : 'menuItem'}
           onClick={() => {
-            // toggleHamburger()
             setSelectedItem('paintings-drawings')
           }}
           to={'/paintings-drawings'}>Paintings and Drawings</NavLink>
         <NavLink
           className={selectedItem === 'print' ? 'selected menuItem' : 'menuItem'}
           onClick={() => {
-            //toggleHamburger()
             setSelectedItem('print')
           }}
           to={'/print'}>Print Making</NavLink>
         <NavLink
           className={selectedItem === 'fiber' ? 'selected menuItem' : 'menuItem'}
           onClick={() => {
-            toggleHamburger()
             setSelectedItem('fiber')
           }}
           to={'/fiber'}>Fiber Art</NavLink>
         <NavLink
           className={selectedItem === 'developmental' ? 'selected menuItem' : 'menuItem'}
           onClick={() => {
-            toggleHamburger()
             setSelectedItem('developmental')
           }}
           to={'/developmental'}>Developmental Art</NavLink>
