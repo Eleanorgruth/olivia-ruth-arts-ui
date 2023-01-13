@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import { NavLink, useParams } from "react-router-dom"
+import { NavLink } from "react-router-dom"
 import './Banner.css'
 import logo from "../assets/ojLogo2.jpeg"
 
@@ -45,6 +45,7 @@ const Banner = () => {
         onClick={() => setSelectedItem(null)}>
         <img
           src={logo}
+          alt={"Olivia Ruth Arts Logo"}
           className="bannerImage"
         />
       </NavLink>
