@@ -4,7 +4,7 @@ import './Banner.css'
 import logo from "../assets/ojLogo2.jpeg"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faEnvelope, faX } from '@fortawesome/free-solid-svg-icons'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 const Banner = () => {
@@ -18,10 +18,17 @@ const Banner = () => {
   }
   const styleSelectedMenuItem = (selected) => {
     if (selectedItem === selected) {
-     return 'selected menuItem'
+      return 'selected menuItem'
     } else {
       return 'menuItem'
-     } 
+    }
+  }
+  const changeIcon = () => {
+    if (hamburgerOpen === false) {
+      return faX
+    } else {
+      return faBars
+    }
   }
   return (
     <div className="navMenu">
@@ -41,7 +48,12 @@ const Banner = () => {
           className="bannerImage"
         />
       </NavLink>
-      <nav className={hamburgerOpen ? 'hide' : 'navStyling'} >
+      <nav
+        className={hamburgerOpen ? 'hide' : 'navStyling'}
+        onClick={() => {
+          setHamburgerOpen(!hamburgerOpen)
+        }}
+      >
         <NavLink
           className={styleSelectedMenuItem('glass')}
           onClick={() => {
@@ -51,7 +63,7 @@ const Banner = () => {
         <NavLink
           className={styleSelectedMenuItem('paintings-drawings')}
           onClick={() => {
-            selectMenuItem ('paintings-drawings')
+            selectMenuItem('paintings-drawings')
           }}
           to={'/paintings-drawings'}>Paintings and Drawings</NavLink>
         <NavLink
@@ -81,8 +93,10 @@ const Banner = () => {
       </nav>
       <FontAwesomeIcon
         className="hamburger"
-        icon={faBars}
-        onClick={() => selectMenuItem()} />
+        icon={changeIcon()}
+        onClick={() => {
+          changeIcon()
+          selectMenuItem()}} />
     </div>
   )
 }
