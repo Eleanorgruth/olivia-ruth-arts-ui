@@ -4,3 +4,10 @@
   height: 100%;
   font-family: 'Cardo', cursive;
 }
+
+@media (max-width: 767px){
+  .app {
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+}

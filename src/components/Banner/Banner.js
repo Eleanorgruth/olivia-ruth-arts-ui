@@ -1,83 +1,102 @@
 import React, { useState } from "react"
 import { NavLink, useParams } from "react-router-dom"
 import './Banner.css'
+import logo from "../assets/ojLogo2.jpeg"
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faBars, faEnvelope } from '@fortawesome/free-solid-svg-icons'
+import { faBars, faEnvelope, faX } from '@fortawesome/free-solid-svg-icons'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
 
 const Banner = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [hamburgerOpen, setHamburgerOpen] = useState(false)
 
-  const toggleHamburger = () => {
-    setHamburgerOpen(!hamburgerOpen)
+  const selectMenuItem = (selection) => {
+    setSelectedItem(selection)
+    if (window.innerWidth < 767)
+      setHamburgerOpen(!hamburgerOpen)
+  }
+  const styleSelectedMenuItem = (selected) => {
+    if (selectedItem === selected) {
+      return 'selected menuItem'
+    } else {
+      return 'menuItem'
+    }
+  }
+  const changeIcon = () => {
+    if (hamburgerOpen === false) {
+      return faX
+    } else {
+      return faBars
+    }
   }
   return (
     <div className="navMenu">
-      {/* <div className="contactOlivia"> */}
-        <a
-          className="contactOlivia"
-          href="https://www.instagram.com/ojrutharts/">
-          <FontAwesomeIcon className="contactOlivia" icon={faInstagram} />
-        </a>
-        <a 
-          className="contactOlivia"
-          href="mailto: olivia.ruth@me.com">
-
-          <FontAwesomeIcon className="contactOlivia" icon={faEnvelope} />
-        </a>
-      {/* </div> */}
-      <NavLink to={'/'}><h1>Olivia Ruth Arts</h1></NavLink>
-      <nav className={hamburgerOpen ? 'hide' : 'navStyling'} >
+      <a
+        href="https://www.instagram.com/ojrutharts/">
+        <FontAwesomeIcon className="contactOlivia" icon={faInstagram} />
+      </a>
+      <a
+        href="mailto: olivia.ruth@me.com">
+        <FontAwesomeIcon className="contactOlivia" icon={faEnvelope} />
+      </a>
+      <NavLink
+        to={'/'}
+        onClick={() => setSelectedItem(null)}>
+        <img
+          src={logo}
+          className="bannerImage"
+        />
+      </NavLink>
+      <nav
+        className={hamburgerOpen ? 'hide' : 'navStyling'}
+        onClick={() => {
+          setHamburgerOpen(!hamburgerOpen)
+        }}
+      >
         <NavLink
-          className={selectedItem === 'glass' ? 'selected menuItem' : 'menuItem'}
+          className={styleSelectedMenuItem('glass')}
           onClick={() => {
-            // toggleHamburger()
-            setSelectedItem('glass')
+            selectMenuItem('glass')
           }}
           to={'/glass'}>Glass</NavLink>
         <NavLink
-          className={selectedItem === 'paintings-drawings' ? 'selected menuItem' : 'menuItem'}
+          className={styleSelectedMenuItem('paintings-drawings')}
           onClick={() => {
-            // toggleHamburger()
-            setSelectedItem('paintings-drawings')
+            selectMenuItem('paintings-drawings')
           }}
           to={'/paintings-drawings'}>Paintings and Drawings</NavLink>
         <NavLink
-          className={selectedItem === 'print' ? 'selected menuItem' : 'menuItem'}
+          className={styleSelectedMenuItem('print')}
           onClick={() => {
-            //toggleHamburger()
-            setSelectedItem('print')
+            selectMenuItem('print')
           }}
           to={'/print'}>Print Making</NavLink>
         <NavLink
-          className={selectedItem === 'fiber' ? 'selected menuItem' : 'menuItem'}
+          className={styleSelectedMenuItem('fiber')}
           onClick={() => {
-            toggleHamburger()
-            setSelectedItem('fiber')
+            selectMenuItem('fiber')
           }}
           to={'/fiber'}>Fiber Art</NavLink>
         <NavLink
-          className={selectedItem === 'developmental' ? 'selected menuItem' : 'menuItem'}
+          className={styleSelectedMenuItem('developmental')}
           onClick={() => {
-            toggleHamburger()
-            setSelectedItem('developmental')
+            selectMenuItem('developmental')
           }}
           to={'/developmental'}>Developmental Art</NavLink>
         <NavLink
-          className={selectedItem === 'about-the-site' ? 'selected menuItem' : 'menuItem'}
+          className={styleSelectedMenuItem('about-the-site')}
           onClick={() => {
-            toggleHamburger()
-            setSelectedItem('about-the-site')
+            selectMenuItem('about-the-site')
           }}
           to={'/about-the-site'}>About the Site</NavLink>
       </nav>
       <FontAwesomeIcon
         className="hamburger"
-        icon={faBars}
-        // isOpen={hamburgerOpen}
-        onClick={toggleHamburger} />
+        icon={changeIcon()}
+        onClick={() => {
+          changeIcon()
+          selectMenuItem()}} />
     </div>
   )
 }

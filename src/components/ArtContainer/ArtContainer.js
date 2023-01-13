@@ -23,6 +23,7 @@ const ArtContainer = () => {
       <section key={artPiece.id}>
         <Zoom>
           <img
+            className="artImage"
             src={`https://drive.google.com/uc?export=view&id=${artPiece.url}`}
             alt={artPiece.title} />
         </Zoom>
