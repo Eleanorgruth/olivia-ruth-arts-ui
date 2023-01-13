@@ -10,7 +10,7 @@ const Home = () => {
         src={olivia}
         alt="Olivia blowing glass"
       />
-      <p>
+      <p className="aboutOlivia">
         Olivia is a student at Centre College in Danville Kentucky, studying studio arts and gender studies. She has always used art as a tool to investigate her surroundings and make sense of her experience in the world. She grew up in the beautiful Colorado Springs, Colorado and left her hometown to experience something different from what she knew, as well as play field hockey in a d3 setting.
         <br/>
         <br/>

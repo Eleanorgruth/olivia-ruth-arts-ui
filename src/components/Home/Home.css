@@ -3,7 +3,11 @@
   display: flex;
 }
 .oliviaPhoto {
-  margin-top: 1vh;
-  /* width: 50vw;
-  height: auto; */
+  height: 40vh;
+  width: auto;
+  margin-right: 3vw;
+}
+.aboutOlivia {
+  margin-top: 0;
+  margin-bottom: 7vh;
 }

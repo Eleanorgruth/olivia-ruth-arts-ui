@@ -12,32 +12,29 @@ const Banner = () => {
   const [hamburgerOpen, setHamburgerOpen] = useState(false)
 
   console.log(window
-    )
+  )
   const toggleHamburger = () => {
-    if(window.width < 767)
-    setHamburgerOpen(!hamburgerOpen)
+    if (window.width < 767)
+      setHamburgerOpen(!hamburgerOpen)
   }
   return (
     <div className="navMenu">
-      {/* <div className="contactOlivia"> */}
-        <a
-          className="contactOlivia"
-          href="https://www.instagram.com/ojrutharts/">
-          <FontAwesomeIcon className="contactOlivia" icon={faInstagram} />
-        </a>
-        <a 
-          className="contactOlivia"
-          href="mailto: olivia.ruth@me.com">
-
-          <FontAwesomeIcon className="contactOlivia" icon={faEnvelope} />
-        </a>
+      <a
+        href="https://www.instagram.com/ojrutharts/">
+        <FontAwesomeIcon className="contactOlivia" icon={faInstagram} />
+      </a>
+      <a
+        href="mailto: olivia.ruth@me.com">
+        <FontAwesomeIcon className="contactOlivia" icon={faEnvelope} />
+      </a>
       <NavLink
         to={'/'}
-        onClick={() => {
-          setSelectedItem(null)
-        }}>
-          <img src={logo}/>
-        </NavLink>
+        onClick={() => setSelectedItem(null)}>
+        <img
+          src={logo}
+          className="bannerImage"
+        />
+      </NavLink>
       <nav className={hamburgerOpen ? 'hide' : 'navStyling'} >
         <NavLink
           className={selectedItem === 'glass' ? 'selected menuItem' : 'menuItem'}
