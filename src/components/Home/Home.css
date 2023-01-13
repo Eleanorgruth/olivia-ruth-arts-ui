@@ -3,11 +3,20 @@
   display: flex;
 }
 .oliviaPhoto {
-  height: 40vh;
+  height: 45vh;
   width: auto;
   margin-right: 3vw;
+  object-fit: cover;
+  /* overflow-clip-margin: content-box;
+  overflow: clip; */
 }
 .aboutOlivia {
   margin-top: 0;
   margin-bottom: 7vh;
+}
+@media (max-width: 767px){
+  .homepage {
+    display: flex;
+    flex-direction: column;
+  }
 }
