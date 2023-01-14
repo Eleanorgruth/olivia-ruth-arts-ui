@@ -25,14 +25,14 @@ const Banner = () => {
     }
   }
   const showHambergerMenu = () => {
-    if (!hamburgerOpen) {
+    if (!hamburgerOpen && window.innerWidth < 767) {
       return (<FontAwesomeIcon
         className={"hamburger"}
         icon={faBars}
         onClick={() => {
           selectMenuItem(null)
         }} />)
-    } else {
+    } else if (hamburgerOpen && window.innerWidth < 767) {
       return <FontAwesomeIcon
         className={"close"}
         icon={faX}
