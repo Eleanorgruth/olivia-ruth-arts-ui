@@ -21,7 +21,7 @@ const App = () => {
             element={<ArtContainer />}
           />
           <Route
-            path="/about-the-site"
+            path="/about"
             element={<AboutSite />}
           />
         <Route

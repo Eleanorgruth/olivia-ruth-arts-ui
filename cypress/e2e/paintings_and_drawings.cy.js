@@ -2,7 +2,7 @@ describe('Painting and Drawings Page', () => {
   beforeEach(()=> {
     cy.intercept("GET", "https://olivia-ruth-arts-api.vercel.app/art", {fixture: "art"})
     cy.visit('http://localhost:3000/')
-    cy.get('[href="/art/paintings-drawings"]').click()
+    cy.get('[href="/art/paintings"]').click()
   })
   it('should have a link to instagram', () => {
     cy.get('.instagram')

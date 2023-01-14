@@ -73,11 +73,11 @@ const Banner = () => {
           }}
           to={'art/glass'}>Glass</NavLink>
         <NavLink
-          className={styleSelectedMenuItem('paintings-drawings')}
+          className={styleSelectedMenuItem('paintings')}
           onClick={() => {
-            selectMenuItem('paintings-drawings')
+            selectMenuItem('paintings')
           }}
-          to={'art/paintings-drawings'}>Paintings and Drawings</NavLink>
+          to={'art/paintings'}>Paintings and Drawings</NavLink>
         <NavLink
           className={styleSelectedMenuItem('print')}
           onClick={() => {
@@ -97,11 +97,11 @@ const Banner = () => {
           }}
           to={'art/developmental'}>Developmental Art</NavLink>
         <NavLink
-          className={styleSelectedMenuItem('about-the-site')}
+          className={styleSelectedMenuItem('about')}
           onClick={() => {
-            selectMenuItem('about-the-site')
+            selectMenuItem('about')
           }}
-          to={'art/about-the-site'}>About the Site</NavLink>
+          to={'/about'}>About the Site</NavLink>
       </nav>
       {showHambergerMenu()}
     </div>
