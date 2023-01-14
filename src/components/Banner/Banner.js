@@ -13,8 +13,9 @@ const Banner = () => {
 
   const selectMenuItem = (selection) => {
     setSelectedItem(selection)
-    if (window.innerWidth < 767)
+    if (window.innerWidth < 767) {
       setHamburgerOpen(!hamburgerOpen)
+    }
   }
   const styleSelectedMenuItem = (selected) => {
     if (selectedItem === selected) {
@@ -23,13 +24,24 @@ const Banner = () => {
       return 'menuItem'
     }
   }
-  const changeIcon = () => {
-    if (hamburgerOpen === false) {
-      return faX
+  const showHambergerMenu = () => {
+    if (!hamburgerOpen) {
+      return (<FontAwesomeIcon
+        className={"hamburger"}
+        icon={faBars}
+        onClick={() => {
+          selectMenuItem(null)
+        }} />)
     } else {
-      return faBars
+      return <FontAwesomeIcon
+        className={"close"}
+        icon={faX}
+        onClick={() => {
+          selectMenuItem(null)
+        }} />
     }
   }
+
   return (
     <div className="navMenu">
       <a
@@ -50,10 +62,7 @@ const Banner = () => {
         />
       </NavLink>
       <nav
-        className={hamburgerOpen ? 'hide' : 'navStyling'}
-        onClick={() => {
-          setHamburgerOpen(!hamburgerOpen)
-        }}
+        className={hamburgerOpen ? 'navStyling' : 'hide'}
       >
         <NavLink
           className={styleSelectedMenuItem('glass')}
@@ -92,12 +101,7 @@ const Banner = () => {
           }}
           to={'/about-the-site'}>About the Site</NavLink>
       </nav>
-      <FontAwesomeIcon
-        className="hamburger"
-        icon={changeIcon()}
-        onClick={() => {
-          changeIcon()
-          selectMenuItem()}} />
+      {showHambergerMenu()}
     </div>
   )
 }

@@ -10,7 +10,7 @@
   display: none;
 }
 .hamburger {
-  display: none;
+  visibility: hidden;
 }
 .menuItem {
   text-decoration: none;
@@ -40,7 +40,7 @@
     justify-content: space-evenly;
     height: 85vh;
     width: 40vw;
-    top: 15vh;
+    top: 20vh;
     right: 0;
     float: right;
     position: fixed;
@@ -51,10 +51,21 @@
   }
   .hamburger {
     height: 5.5vh;
-    margin: 2%;
-    display: flex;
-    float: right;
+    top: 15vh;
+    right: 0;
+    margin-right: 1vw;
+    visibility: visible;
+    z-index: 10;
   }
+.close {
+    height: 5.5vh;
+    top: 15vh;
+    right: 0;
+    position: fixed;
+    margin-right: 1vw;
+    visibility: visible;
+    z-index: 10;
+}
   .menuItem {
     font-size: 3vh;
     color: white;
