@@ -112,4 +112,3 @@ const art = [
   }
 ]
 
-//Any comments or suggestions about the site are welcome
