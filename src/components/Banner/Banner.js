@@ -69,37 +69,37 @@ const Banner = () => {
           onClick={() => {
             selectMenuItem('glass')
           }}
-          to={'/glass'}>Glass</NavLink>
+          to={'art/glass'}>Glass</NavLink>
         <NavLink
           className={styleSelectedMenuItem('paintings-drawings')}
           onClick={() => {
             selectMenuItem('paintings-drawings')
           }}
-          to={'/paintings-drawings'}>Paintings and Drawings</NavLink>
+          to={'art/paintings-drawings'}>Paintings and Drawings</NavLink>
         <NavLink
           className={styleSelectedMenuItem('print')}
           onClick={() => {
             selectMenuItem('print')
           }}
-          to={'/print'}>Print Making</NavLink>
+          to={'art/print'}>Print Making</NavLink>
         <NavLink
           className={styleSelectedMenuItem('fiber')}
           onClick={() => {
             selectMenuItem('fiber')
           }}
-          to={'/fiber'}>Fiber Art</NavLink>
+          to={'art/fiber'}>Fiber Art</NavLink>
         <NavLink
           className={styleSelectedMenuItem('developmental')}
           onClick={() => {
             selectMenuItem('developmental')
           }}
-          to={'/developmental'}>Developmental Art</NavLink>
+          to={'art/developmental'}>Developmental Art</NavLink>
         <NavLink
           className={styleSelectedMenuItem('about-the-site')}
           onClick={() => {
             selectMenuItem('about-the-site')
           }}
-          to={'/about-the-site'}>About the Site</NavLink>
+          to={'art/about-the-site'}>About the Site</NavLink>
       </nav>
       {showHambergerMenu()}
     </div>
