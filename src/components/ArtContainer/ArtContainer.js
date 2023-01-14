@@ -37,7 +37,6 @@ const ArtContainer = () => {
       </section>
     )
   })
-
   return (
     <div>
       {artDisplay}

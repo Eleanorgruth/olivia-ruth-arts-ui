@@ -1,0 +1,43 @@
+describe('Print Making Page', () => {
+  beforeEach(()=> {
+    cy.intercept("GET", "https://olivia-ruth-arts-api.vercel.app/art", {fixture: "art"})
+    cy.visit('http://localhost:3000/')
+    cy.get('[href="/art/print"]').click()
+  })
+  it('should have a link to instagram', () => {
+    cy.get('.instagram')
+      .should('have.attr', 'href', 'https://www.instagram.com/ojrutharts/')
+  })
+  it('should have a link to email', () => {
+    cy.get('.email')
+      .should('have.attr', 'href', 'mailto: olivia.ruth@me.com')
+  })
+  it('should have a nav bar', () => {
+    cy.get('.navStyling')
+      .should('contain', 'Glass')
+      .and('contain', 'Paintings and Drawings')
+      .and('contain', 'Print Making')
+      .and('contain', 'Fiber Art')
+      .and('contain', 'Developmental Art')
+      .and('contain', 'About the Site')
+  })
+  it('should show glass as selected in the nav bar', () => {
+    cy.get('.selected').and('contain', "Print Making")
+  })
+  it("should filter the art by the type, and display the print making art", () => {
+    cy.get('section').eq(0)
+      .and('contain', 'Dream Scape Print')
+      .and('contain', 'June 2022')
+      .and('contain', 'Linoleum print')
+      .and('contain', 'Dimensions: 5 inches x 5 inches')
+      .and('contain', 'The same swirl pattern that has become habit in Olivia\"s hand, here shown as a print.This series of prints were made from a sudden urge to create, following a printmaking class with Melanie Yazzie.')
+    cy.get('.artImage').eq(0).should('have.attr', 'alt', 'Dream Scape Print')
+      cy.get('section').eq(1)
+      .and('contain', 'Butterfly reduction print')
+      .and('contain', 'August 2022')
+      .and('contain', 'Linoleum reduction print')
+      .and('contain', 'Dimensions: 5 inches x 5 inches')
+      .and('contain', 'A reintroduction to the reduction print process.')
+    cy.get('.artImage').eq(1).should('have.attr', 'alt', 'Butterfly reduction print')
+  })
+})
