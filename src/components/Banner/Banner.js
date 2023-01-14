@@ -45,10 +45,12 @@ const Banner = () => {
   return (
     <div className="navMenu">
       <a
+        className="instagram"
         href="https://www.instagram.com/ojrutharts/">
         <FontAwesomeIcon className="contactOlivia" icon={faInstagram} />
       </a>
       <a
+        className="email"
         href="mailto: olivia.ruth@me.com">
         <FontAwesomeIcon className="contactOlivia" icon={faEnvelope} />
       </a>
