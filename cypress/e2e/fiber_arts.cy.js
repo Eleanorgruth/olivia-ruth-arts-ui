@@ -1,0 +1,43 @@
+describe('Fiber Art Page', () => {
+  beforeEach(()=> {
+    cy.intercept("GET", "https://olivia-ruth-arts-api.vercel.app/art", {fixture: "art"})
+    cy.visit('http://localhost:3000/')
+    cy.get('[href="/art/fiber"]').click()
+  })
+  it('should have a link to instagram', () => {
+    cy.get('.instagram')
+      .should('have.attr', 'href', 'https://www.instagram.com/ojrutharts/')
+  })
+  it('should have a link to email', () => {
+    cy.get('.email')
+      .should('have.attr', 'href', 'mailto: olivia.ruth@me.com')
+  })
+  it('should have a nav bar', () => {
+    cy.get('.navStyling')
+      .should('contain', 'Glass')
+      .and('contain', 'Paintings and Drawings')
+      .and('contain', 'Print Making')
+      .and('contain', 'Fiber Art')
+      .and('contain', 'Developmental Art')
+      .and('contain', 'About the Site')
+  })
+  it('should show fiber art as selected in the nav bar', () => {
+    cy.get('.selected').and('contain', "Fiber Art")
+  })
+  it("should filter the art by the type, and display the fiber art", () => {
+    cy.get('section').eq(0)
+      .and('contain', 'Granny sweater')
+      .and('contain', 'Spring 2021')
+      .and('contain', 'Crochet')
+      .and('contain', 'Dimensions: 22 inches by 29 inches')
+      .and('contain', 'The first thing Olivia ever crocheted was this sweater. Crocheting was a Craft she picked up over quarantine.')
+    cy.get('.artImage').eq(0).should('have.attr', 'alt', 'Granny sweater')
+    cy.get('section').eq(1)
+      .and('contain', 'Sydney')
+      .and('contain', 'December 2022')
+      .and('contain', 'Crochet')
+      .and('contain', 'Dimensions: 4 inches x 6 inches')
+      .and('contain', 'Sydney is a crocheted ornament of her sisters dog.')
+    cy.get('.artImage').eq(1).should('have.attr', 'alt', 'Sydney')
+  })
+})
