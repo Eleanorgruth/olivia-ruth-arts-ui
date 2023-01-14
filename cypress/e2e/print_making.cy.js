@@ -24,7 +24,7 @@ describe('Print Making Page', () => {
   it('should show glass as selected in the nav bar', () => {
     cy.get('.selected').and('contain', "Print Making")
   })
-  it("should filter the art by the type, and display the glass art", () => {
+  it("should filter the art by the type, and display the print making art", () => {
     cy.get('section').eq(0)
       .and('contain', 'Dream Scape Print')
       .and('contain', 'June 2022')
