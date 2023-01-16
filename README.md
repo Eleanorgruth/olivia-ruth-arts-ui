@@ -15,3 +15,18 @@ Olivia Ruth Arts is an Art portfolio site that was built over a five day sprint 
  
  - I also created Wireframes and ran the design by Olivia before starting to code
   ![Screen Shot 2023-01-16 at 12 22 18 PM](https://user-images.githubusercontent.com/108287127/212752487-e262de1c-9524-40f6-b434-1a9d0ece2fe5.png)
+
+### Technology
+- React
+- Cypress
+- React Router
+- Git/GitHub
+- JavaScript
+- Fetch API
+- CSS
+
+### Installation Instructions
+1. Fork this repository.
+2. Clone your new, forked repository to your local machine.
+3. `cd` into the main project repository on your local machine and run `npm install`, then `npm start` to launch the application's server.
+4. Open the link to your local server `http://localhost:3000/` in your web browser to view the live page.
