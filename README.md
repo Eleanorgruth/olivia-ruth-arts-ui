@@ -3,8 +3,11 @@
 Olivia Ruth Arts is an Art portfolio site that was built over a five day sprint from design to launch. This project was developed as the final solo project in the Turing School of Software and Design bootcamp. The goal of this project was to demonstrate mastery of React, React Router, Asynchronous JavaScript and End to end testing with Cypress. 
 
 [Deployed Site](https://olivia-ruth-arts.vercel.app/)
+
 [Backend Repo](https://github.com/Eleanorgruth/olivia-ruth-arts-api)
+
 [Deployed Backend](https://olivia-ruth-arts-api.vercel.app/art)
+
 
 
 ### Landing Page Desktop View
