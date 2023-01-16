@@ -2,6 +2,11 @@
 
 Olivia Ruth Arts is an Art portfolio site that was built over a five day sprint from design to launch. This project was developed as the final solo project in the Turing School of Software and Design bootcamp. The goal of this project was to demonstrate mastery of React, React Router, Asynchronous JavaScript and End to end testing with Cypress. 
 
+[Deployed Site](https://olivia-ruth-arts.vercel.app/)
+[Backend Repo](https://github.com/Eleanorgruth/olivia-ruth-arts-api)
+[Deployed Backend](https://olivia-ruth-arts-api.vercel.app/art)
+
+
 ### Landing Page Desktop View
 <img width="700" alt="Screen Shot 2023-01-16 at 11 54 51 AM" src="https://user-images.githubusercontent.com/108287127/212748767-ab0534b9-8753-4065-a64a-46f86736457e.png">
 
@@ -30,3 +35,9 @@ Olivia Ruth Arts is an Art portfolio site that was built over a five day sprint 
 2. Clone your new, forked repository to your local machine.
 3. `cd` into the main project repository on your local machine and run `npm install`, then `npm start` to launch the application's server.
 4. Open the link to your local server `http://localhost:3000/` in your web browser to view the live page.
+
+### Wins:
+- I loved working with my younger sister to create this art portfolio for her. We collaborated on design decisions, and I kept her updated throughout the process. It feels very fulfilling to use the skills I gained at the Turing School of Software and Design to create a practical application to show off my sister's artwork! 
+
+### Challenges 
+- The photos of the art on the site are slow to load. I'm still working on this issue and am looking into possible solutions. 
