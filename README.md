@@ -16,6 +16,10 @@ Olivia Ruth Arts is an Art portfolio site that was built over a five day sprint 
 ### While viewing art in the various categories, click on a photo to zoom
 ![](https://media.giphy.com/media/ZK8fcvu6NmM8SFYIUS/giphy.gif)
 
+### Mobile Design 
+<img width="200" alt="Screen Shot 2023-01-16 at 2 13 14 PM" src="https://user-images.githubusercontent.com/108287127/212766442-3dc035af-85c7-4c82-b98b-c359fcd89d98.png">
+<img width="200" alt="Screen Shot 2023-01-16 at 2 12 39 PM" src="https://user-images.githubusercontent.com/108287127/212766369-380d8ba9-5692-4bd9-8b5c-fd7650f76d55.png">
+
 ### Planning
 - For the project requirements I was tasked to create two user personas to describe the target audience. 
   - [Carol Zimmerman](https://docs.google.com/document/d/1U9oHSIYzMSZbShBxVeiC4b0e9ca_j68a1dl2DZgOn_4/edit)
