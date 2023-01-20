@@ -16,3 +16,15 @@
   display: block;
   margin-top: 6vh;
 }
+.contactEleanor {
+  display: flex;
+  flex-direction: row;
+  width: 20vw;
+  margin-bottom: 8vh;
+  margin-top: 3vh;
+  justify-content: space-evenly;
+}
+.contact {
+  color: black;
+  height: 5vh;
+}
