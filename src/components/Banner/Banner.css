@@ -5,6 +5,7 @@
   width: 80vw;
   display: flex;
   justify-content: space-evenly;
+  border: 2px solid red
 }
 .hide {
   display: none;
@@ -28,8 +29,8 @@
 .bannerImage {
   width: 30vw;
   text-align: center;
-  margin-left: 25vw;
-  margin-right: 35vw;
+  /* margin-left: 25vw;
+  margin-right: 35vw; */
 }
 @media (max-width: 767px){
   .navStyling {
@@ -51,11 +52,12 @@
   }
   .hamburger {
     height: 5.5vh;
-    top: 15vh;
-    right: 0;
-    margin-right: 1vw;
+    float: right;
+    /* top: 15vh;
+    left: 0; */
+    /* margin-right: 1vw; */
     visibility: visible;
-    z-index: 10;
+    /* z-index: 10; */
   }
 .close {
     height: 5.5vh;

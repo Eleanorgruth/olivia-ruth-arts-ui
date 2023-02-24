@@ -6,17 +6,18 @@ import logo from "../assets/ojLogo2.jpeg"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faBars, faEnvelope, faX } from '@fortawesome/free-solid-svg-icons'
 import { faInstagram } from '@fortawesome/free-brands-svg-icons'
+import HamburgerMenu from "../HamburgerMenu/HamburgerMenu"
 
 const Banner = () => {
   const [selectedItem, setSelectedItem] = useState(null);
-  const [hamburgerOpen, setHamburgerOpen] = useState(true)
+  // const [hamburgerOpen, setHamburgerOpen] = useState(true)
 
-  const selectMenuItem = (selection) => {
-    setSelectedItem(selection)
-    if (window.innerWidth < 767) {
-      setHamburgerOpen(!hamburgerOpen)
-    }
-  }
+  //const selectMenuItem = (selection) => {
+    //setSelectedItem(selection)
+    // if (window.innerWidth < 767) {
+    //   setHamburgerOpen(!hamburgerOpen)
+    // }
+  //}
   const styleSelectedMenuItem = (selected) => {
     if (selectedItem === selected) {
       return 'selected menuItem'
@@ -24,23 +25,23 @@ const Banner = () => {
       return 'menuItem'
     }
   }
-  const showHambergerMenu = () => {
-    if (!hamburgerOpen && window.innerWidth < 767) {
-      return (<FontAwesomeIcon
-        className={"hamburger"}
-        icon={faBars}
-        onClick={() => {
-          selectMenuItem(null)
-        }} />)
-    } else if (hamburgerOpen && window.innerWidth < 767) {
-      return <FontAwesomeIcon
-        className={"close"}
-        icon={faX}
-        onClick={() => {
-          selectMenuItem(null)
-        }} />
-    }
-  }
+  // const showHambergerMenu = () => {
+  //   if (!hamburgerOpen && window.innerWidth < 767) {
+  //     return (<FontAwesomeIcon
+  //       className={"hamburger"}
+  //       icon={faBars}
+  //       onClick={() => {
+  //         selectMenuItem(null)
+  //       }} />)
+  //   } else if (hamburgerOpen && window.innerWidth < 767) {
+  //     return <FontAwesomeIcon
+  //       className={"close"}
+  //       icon={faX}
+  //       onClick={() => {
+  //         selectMenuItem(null)
+  //       }} />
+  //   }
+  // }
 
   return (
     <div className="navMenu">
@@ -63,47 +64,49 @@ const Banner = () => {
           className="bannerImage"
         />
       </NavLink>
+      {window.innerWidth > 767 ? 
       <nav
-        className={hamburgerOpen ? 'navStyling' : 'hide'}
+        className='navStyling'
       >
         <NavLink
           className={styleSelectedMenuItem('glass')}
           onClick={() => {
-            selectMenuItem('glass')
+            setSelectedItem('glass')
           }}
           to={'art/glass'}>Glass</NavLink>
         <NavLink
           className={styleSelectedMenuItem('paintings')}
           onClick={() => {
-            selectMenuItem('paintings')
+            setSelectedItem('paintings')
           }}
           to={'art/paintings'}>Paintings and Drawings</NavLink>
         <NavLink
           className={styleSelectedMenuItem('print')}
           onClick={() => {
-            selectMenuItem('print')
+            setSelectedItem('print')
           }}
           to={'art/print'}>Print Making</NavLink>
         <NavLink
           className={styleSelectedMenuItem('fiber')}
           onClick={() => {
-            selectMenuItem('fiber')
+            setSelectedItem('fiber')
           }}
           to={'art/fiber'}>Fiber Art</NavLink>
         <NavLink
           className={styleSelectedMenuItem('developmental')}
           onClick={() => {
-            selectMenuItem('developmental')
+            setSelectedItem('developmental')
           }}
           to={'art/developmental'}>Developmental Art</NavLink>
         <NavLink
           className={styleSelectedMenuItem('about')}
           onClick={() => {
-            selectMenuItem('about')
+            setSelectedItem('about')
           }}
           to={'/about'}>About the Site</NavLink>
       </nav>
-      {showHambergerMenu()}
+    : <HamburgerMenu setSelectedItem={setSelectedItem}/> }
+    {/* {showHambergerMenu()} */}
     </div>
   )
 }
